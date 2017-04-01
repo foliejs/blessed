@@ -6,8 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jack Sun",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foliejs/blessed.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foliejs/blessed/issues"
+  },
+  "homepage": "https://github.com/foliejs/blessed#readme",
   "dependencies": {
     "blessed": "^0.1.81"
   }

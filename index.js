@@ -1,11 +1,11 @@
-const blessed = require('blessed');
+const blessed = require('blessed')
 
 // Create a screen object.
 const screen = blessed.screen({
   smartCSR: true
-});
+})
 
-screen.title = 'my window title';
+screen.title = 'my window title'
 
 // Create a box perfectly centered horizontally and vertically.
 var box = blessed.box({
@@ -28,10 +28,10 @@ var box = blessed.box({
       bg: 'green'
     }
   }
-});
+})
 
 // Append our box to the screen.
-screen.append(box);
+screen.append(box)
 
 // Add a png icon to the box
 var icon = blessed.image({
@@ -46,26 +46,26 @@ var icon = blessed.image({
 });
 
 // If our box is clicked, change the content.
-box.on('click', function(data) {
-  box.setContent('{center}Some different {red-fg}content{/red-fg}.{/center}');
-  screen.render();
-});
+box.on('click', data => {
+  box.setContent('{center}Some different {red-fg}content{/red-fg}.{/center}')
+  screen.render()
+})
 
 // If box is focused, handle `enter`/`return` and give us some more content.
-box.key('enter', function(ch, key) {
+box.key('enter', (ch, key) => {
   box.setContent('{right}Even different {black-fg}content{/black-fg}.{/right}\n');
-  box.setLine(1, 'bar');
-  box.insertLine(1, 'foo');
-  screen.render();
-});
+  box.setLine(1, 'bar')
+  box.insertLine(1, 'foo')
+  screen.render()
+})
 
 // Quit on Escape, q, or Control-C.
-screen.key(['escape', 'q', 'C-c'], function(ch, key) {
-  return process.exit(0);
-});
+screen.key(['escape', 'q', 'C-c'], (ch, key) => {
+  return process.exit(0)
+})
 
 // Focus our element.
-box.focus();
+box.focus()
 
 // Render the screen.
-screen.render();
+screen.render()
